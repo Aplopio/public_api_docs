@@ -39,11 +39,11 @@
         <h1 id='introduction'>Introduction</h1>
 <p>Welcome to the Recruiterbox API</p>
 <h1 id='authentication'>Authentication</h1>
-<p>Authentication is done via the API key which you can find in your Company settings.</p>
+<p>Authentication is done via the API key which you can find in <a href="https://app.recruiterbox.com/app/#settings/api-key/">Settings -&gt; Company Settings -&gt; API Key</a></p>
 
 <p>Requests are authenticated using <a href="http://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic Auth</a>. Provide your API key as the basic auth username. You do not need to provide a password.</p>
 
-<p>You can see your API key, and revoke it if necessary. Be sure to keep your API key a secret!</p>
+<p>You can see your API key, and revoke it if necessary. Be sure to keep your API key a secret.</p>
 
 <blockquote>
 <p>Example Request</p>
@@ -52,11 +52,9 @@
 curl https://api.recruiterbox.com/v1/openings <span class="se">\</span>
    -u <span class="o">{</span>key<span class="o">}</span>:
 
-
+curl uses the -u flag to pass basic auth credentials <span class="o">(</span>adding a colon after your API key will prevent it from asking you <span class="k">for </span>a password<span class="o">)</span>.
 
 </pre>
-
-<p>curl uses the -u flag to pass basic auth credentials (adding a colon after your API key will prevent it from asking you for a password).</p>
 
 <p><aside class="notice">
 You must replace <code class="prettyprint">{key}</code> with your API key.
@@ -226,12 +224,12 @@ You must replace <code class="prettyprint">{key}</code> with your API key.
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"openings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"objects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42075</span><span class="p">,</span><span class="w">
     </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UX - Engineer"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UX - Engineer"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bangalore"</span><span class="p">,</span><span class="w"> </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KA"</span><span class="p">,</span><span class="w"> </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"India"</span><span class="p">},</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Jose"</span><span class="p">,</span><span class="w"> </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w"> </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">},</span><span class="w">
     </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Dev"</span><span class="p">,</span><span class="s2">"UX"</span><span class="p">],</span><span class="w">
     </span><span class="s2">"is_private"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"is_archived"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
@@ -240,14 +238,18 @@ You must replace <code class="prettyprint">{key}</code> with your API key.
     </span><span class="s2">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413437038</span><span class="p">,</span><span class="w">
     </span><span class="s2">"modified_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413445073</span><span class="w"> 
   </span><span class="p">}],</span><span class="w">
-  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"total_count"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">}</span><span class="w">
+  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"total_count"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
 <p>This endpoint retrieves all openings.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET https://api.recruiterbox.com/v1/openings/</code></p>
-<h3 id='filter-query-parameters'>Filter Query Parameters</h3>
+<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -256,43 +258,55 @@ You must replace <code class="prettyprint">{key}</code> with your API key.
 </thead><tbody>
 <tr>
 <td>tags</td>
-<td></td>
+<td>Filter by tags</td>
 </tr>
 <tr>
 <td>city</td>
-<td></td>
+<td>Filter by city</td>
 </tr>
 <tr>
 <td>state</td>
-<td></td>
+<td>Filter by state</td>
 </tr>
 <tr>
 <td>country</td>
-<td></td>
+<td>Filter by country</td>
 </tr>
 <tr>
 <td>title</td>
-<td></td>
+<td>Filter by title</td>
 </tr>
 <tr>
 <td>description</td>
-<td></td>
+<td>Filter by description</td>
 </tr>
 <tr>
 <td>is_archived</td>
-<td></td>
+<td>Filter by archived openings</td>
 </tr>
 <tr>
 <td>is_private</td>
-<td></td>
+<td>Filter by private / public openings</td>
 </tr>
 <tr>
-<td>created_on</td>
-<td></td>
+<td>created_on__gt</td>
+<td>Filter by created date greater than a given timestamp</td>
 </tr>
 <tr>
-<td>modified_on</td>
-<td></td>
+<td>modified_on__gt</td>
+<td>Filter by modified date greater than a given timestamp</td>
+</tr>
+<tr>
+<td>created_on__lt</td>
+<td>Filter by created date lesser than a given timestamp</td>
+</tr>
+<tr>
+<td>modified_on__lt</td>
+<td>Filter by modified date lesser than a given timestamp</td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>Sort by created_on, modified_on attributes. Use &ldquo;-&rdquo; to sort in descending order</td>
 </tr>
 </tbody></table>
 <h2 id='get-a-specific-opening'>Get a specific Opening</h2><pre class="highlight shell">curl <span class="s2">"https://api.recruiterbox.com/v1/openings/42075"</span>
@@ -303,25 +317,23 @@ You must replace <code class="prettyprint">{key}</code> with your API key.
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"opening"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42075</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UX - Engineer"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UX - Engineer"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bangalore"</span><span class="p">,</span><span class="w"> </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KA"</span><span class="p">,</span><span class="w"> </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"India"</span><span class="p">},</span><span class="w">
-    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Dev"</span><span class="p">,</span><span class="s2">"UX"</span><span class="p">],</span><span class="w">
-    </span><span class="s2">"is_private"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_archived"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"application_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demoaccount-DMCC0203@applications.recruiterbox.com"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"hosted_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demoaccount.recruiterbox.com/jobs/ad3e"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413437038</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"modified_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413445073</span><span class="w"> 
-  </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42075</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UX - Engineer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UX - Engineer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Jose"</span><span class="p">,</span><span class="w"> </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w"> </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">},</span><span class="w">
+  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Dev"</span><span class="p">,</span><span class="s2">"UX"</span><span class="p">],</span><span class="w">
+  </span><span class="s2">"is_private"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"is_archived"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"application_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demoaccount-DMCC0203@applications.recruiterbox.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hosted_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demoaccount.recruiterbox.com/jobs/ad3e"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413437038</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"modified_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413445073</span><span class="w"> 
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
 <p>This endpoint retrieves a specific opening.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">GET https://api.recruiterbox.com/v1/openings/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET https://api.recruiterbox.com/v1/openings/{id}</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -330,8 +342,8 @@ You must replace <code class="prettyprint">{key}</code> with your API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the opening to retrieve</td>
+<td>id</td>
+<td>ID of the opening to retrieve</td>
 </tr>
 </tbody></table>
 
