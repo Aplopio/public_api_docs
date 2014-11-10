@@ -48,9 +48,7 @@
 <blockquote>
 <p>Example Request</p>
 </blockquote>
-<pre class="highlight shell">
-curl https://api.recruiterbox.com/v1/openings <span class="se">\</span>
-   -u <span class="o">{</span>key<span class="o">}</span>:
+<pre class="highlight shell">curl https://api.recruiterbox.com/v1/openings -u <span class="o">{</span>key<span class="o">}</span>:
 
 curl uses the -u flag to pass basic auth credentials <span class="o">(</span>adding a colon after your API key will prevent it from asking you <span class="k">for </span>a password<span class="o">)</span>.
 
@@ -216,33 +214,38 @@ You must replace <code class="prettyprint">{key}</code> with your API key.
 <td><strong>timestamp</strong></td>
 </tr>
 </tbody></table>
-<h2 id='list-of-all-openings'>List of all Openings</h2><pre class="highlight shell">curl <span class="s2">"https://api.recruiterbox.com/v1/openings"</span> <span class="se">\</span>
-  -u <span class="s2">"{key}:"</span>
+<h2 id='list-of-all-openings'>List of all Openings</h2><pre class="highlight shell">curl https://api.recruiterbox.com/v1/openings <span class="se">\</span>
+ -u <span class="o">{</span>key<span class="o">}</span>:
 </pre>
 
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"objects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42075</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UX - Engineer"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UX - Engineer"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Jose"</span><span class="p">,</span><span class="w"> </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w"> </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">},</span><span class="w">
-    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Dev"</span><span class="p">,</span><span class="s2">"UX"</span><span class="p">],</span><span class="w">
-    </span><span class="s2">"is_private"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_archived"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"application_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demoaccount-DMCC0203@applications.recruiterbox.com"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"hosted_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demoaccount.recruiterbox.com/jobs/ad3e"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413437038</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"modified_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413445073</span><span class="w"> 
-  </span><span class="p">}],</span><span class="w">
-  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
-    </span><span class="s2">"total_count"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w"> 
-    </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> 
-    </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"objects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a42f3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UX - Engineer"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UX - Engineer"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Jose"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Dev"</span><span class="p">,</span><span class="s2">"UX"</span><span class="p">],</span><span class="w">
+        </span><span class="s2">"is_private"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_archived"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"application_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demoaccount-DMCC0203@app.recruiterbox.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hosted_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demoaccount.recruiterbox.com/jobs/ad3e"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413437038</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"modified_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413445073</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"total_count"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
@@ -309,31 +312,154 @@ You must replace <code class="prettyprint">{key}</code> with your API key.
 <td>Sort by created_on, modified_on attributes. Use &ldquo;-&rdquo; to sort in descending order</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-specific-opening'>Get a specific Opening</h2><pre class="highlight shell">curl <span class="s2">"https://api.recruiterbox.com/v1/openings/42075"</span>
-  -u <span class="s2">"{key}:"</span>
+<h2 id='get-a-specific-opening'>Get a specific Opening</h2><pre class="highlight shell">curl https://api.recruiterbox.com/v1/openings/a42f3 <span class="se">\</span>
+  -u <span class="o">{</span>key<span class="o">}</span>:
 </pre>
 
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42075</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a42f3"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UX - Engineer"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UX - Engineer"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Jose"</span><span class="p">,</span><span class="w"> </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w"> </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">},</span><span class="w">
   </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Dev"</span><span class="p">,</span><span class="s2">"UX"</span><span class="p">],</span><span class="w">
   </span><span class="s2">"is_private"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"is_archived"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"application_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demoaccount-DMCC0203@applications.recruiterbox.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"application_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demoaccount-DMCC0203@app.recruiterbox.com"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"hosted_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demoaccount.recruiterbox.com/jobs/ad3e"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413437038</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"modified_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413445073</span><span class="w"> 
+  </span><span class="s2">"modified_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413445073</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
 <p>This endpoint retrieves a specific opening.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">GET https://api.recruiterbox.com/v1/openings/{id}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>ID of the opening to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='get-application-form-fields-of-a-opening'>Get application form fields of a Opening</h2><pre class="highlight shell">curl https://api.recruiterbox.com/v1/openings/a42f3/application_form <span class="se">\</span>
+  -u <span class="o">{</span>key<span class="o">}</span>:
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"objects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"is_disabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First Name"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"choices"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"candidate_first_name"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small_text"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"is_disabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Last Name"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"choices"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"candidate_last_name"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_required"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small_text"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"is_disabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"choices"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"candidate_email"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"is_disabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Phone"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"choices"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"candidate_phone"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small_text"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"is_disabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Resume"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"choices"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"resume"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_required"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"file"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"is_disabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Age"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"choices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"18 - 25"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"26 - 32"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"33+"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"age"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_required"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"select_one"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint retrieves all application form fields of a specific opening.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET https://api.recruiterbox.com/v1/openings/{id}/appication_form</code></p>
+<h3 id='attributes'>Attributes</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>key</td>
+<td><strong>string</strong> A unique key for the field.</td>
+</tr>
+<tr>
+<td>type</td>
+<td><strong>string</strong> Type of the field, can be either of <code class="prettyprint">small_text</code>, <code class="prettyprint">large_text</code>, <code class="prettyprint">select_one</code>, <code class="prettyprint">select_multiple</code>, <code class="prettyprint">url</code>, <code class="prettyprint">email</code>, <code class="prettyprint">number</code>, <code class="prettyprint">date</code> &amp; <code class="prettyprint">file</code>.</td>
+</tr>
+<tr>
+<td>is_disabled</td>
+<td><strong>boolean</strong> Is a disabled field ?</td>
+</tr>
+<tr>
+<td>is_required</td>
+<td><strong>boolean</strong> Is a required field ?</td>
+</tr>
+<tr>
+<td>label</td>
+<td><strong>string</strong> Field label</td>
+</tr>
+<tr>
+<td>choices</td>
+<td><strong>list</strong> Choices for field, if either of type <code class="prettyprint">select_one</code> or <code class="prettyprint">select_multiple</code></td>
+</tr>
+</tbody></table>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
