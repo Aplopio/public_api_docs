@@ -48,14 +48,14 @@
 <blockquote>
 <p>Example Request</p>
 </blockquote>
-<pre class="highlight shell">curl https://api.recruiterbox.com/v1/openings -u <span class="o">{</span>key<span class="o">}</span>:
+<pre class="highlight shell">curl https://api.recruiterbox.com/v1/openings -u <span class="o">{</span>api_key<span class="o">}</span>:
 
 curl uses the -u flag to pass basic auth credentials <span class="o">(</span>adding a colon after your API key will prevent it from asking you <span class="k">for </span>a password<span class="o">)</span>.
 
 </pre>
 
 <p><aside class="notice">
-You must replace <code class="prettyprint">{key}</code> with your API key.
+You must replace <code class="prettyprint">{api_key}</code> with your API key.
 </aside></p>
 
           <h1 id='pagination'>Pagination</h1>
@@ -215,7 +215,7 @@ You must replace <code class="prettyprint">{key}</code> with your API key.
 </tr>
 </tbody></table>
 <h2 id='list-of-all-openings'>List of all Openings</h2><pre class="highlight shell">curl https://api.recruiterbox.com/v1/openings <span class="se">\</span>
- -u <span class="o">{</span>key<span class="o">}</span>:
+ -u <span class="o">{</span>api_key<span class="o">}</span>:
 </pre>
 
 <blockquote>
@@ -313,7 +313,7 @@ You must replace <code class="prettyprint">{key}</code> with your API key.
 </tr>
 </tbody></table>
 <h2 id='get-a-specific-opening'>Get a specific Opening</h2><pre class="highlight shell">curl https://api.recruiterbox.com/v1/openings/a42f3 <span class="se">\</span>
-  -u <span class="o">{</span>key<span class="o">}</span>:
+  -u <span class="o">{</span>api_key<span class="o">}</span>:
 </pre>
 
 <blockquote>
@@ -350,7 +350,7 @@ You must replace <code class="prettyprint">{key}</code> with your API key.
 </tr>
 </tbody></table>
 <h2 id='get-application-form-fields-of-a-opening'>Get application form fields of a Opening</h2><pre class="highlight shell">curl https://api.recruiterbox.com/v1/openings/a42f3/application_form <span class="se">\</span>
-  -u <span class="o">{</span>key<span class="o">}</span>:
+  -u <span class="o">{</span>api_key<span class="o">}</span>:
 </pre>
 
 <blockquote>
@@ -470,6 +470,221 @@ You must replace <code class="prettyprint">{key}</code> with your API key.
 <tr>
 <td>id</td>
 <td>ID of the opening</td>
+</tr>
+</tbody></table>
+<h3 id='field-types'>Field types</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>small_text</td>
+<td>Single line text</td>
+</tr>
+<tr>
+<td>large_text</td>
+<td>Paragraph text</td>
+</tr>
+<tr>
+<td>select_one</td>
+<td>Applicants choose one option from a list</td>
+</tr>
+<tr>
+<td>select_multiple</td>
+<td>Applicants can choose multiple options</td>
+</tr>
+<tr>
+<td>url</td>
+<td>Web-link / URL</td>
+</tr>
+<tr>
+<td>email</td>
+<td>Email Address</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Number</td>
+</tr>
+<tr>
+<td>date</td>
+<td>Date</td>
+</tr>
+<tr>
+<td>file</td>
+<td>File Upload</td>
+</tr>
+</tbody></table>
+<h2 id='apply-for-a-opening'>Apply for a Opening</h2><pre class="highlight shell">curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <span class="s1">'{
+  "fields": [
+    { "key" : "candidate_first_name", "value" : "John"},
+    { "key" : "candidate_last_name", "value" : "Doe"},
+    { "key" : "candidate_email", "value" : "john.doe@gmail.com"},
+    { "key" : "candidate_phone", "value" : 123},
+    { "key" : "resume", "value": {
+      "encoded_data" : "aGVsbG8gd29ybGQ=",
+      "file_name" : "ressume.txt"
+      }
+    }
+  ],
+  "source" : "new website"
+  }'</span> https://api.recruiterbox.com/v1/openings/a42f3/apply -u <span class="o">{</span>api_key<span class="o">}</span>:
+</pre>
+
+<blockquote>
+<p>The above command returns None.</p>
+</blockquote>
+
+<p>This endpoint lets you apply to an opening. The end result is a candidate assigned to this opening.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">POST https://api.recruiterbox.com/v1/openings/{id}/apply</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>ID of the opening</td>
+</tr>
+</tbody></table>
+<h3 id='post-data-of-fields'>Post data of fields</h3>
+<p>Post data is a json with a required attribute <code class="prettyprint">fields</code> and an optional attribute <code class="prettyprint">source</code>. <code class="prettyprint">fields</code> is a list of candidate attributes, while <code class="prettyprint">source</code> can be (optionally) set to the source of this candidate.</p>
+
+<p>Each item in <code class="prettyprint">fields</code> has attributes <code class="prettyprint">key</code> and <code class="prettyprint">value</code>. The <code class="prettyprint">key</code> can be ascertained from the <a href="#get-application-form-fields-of-a-opening">application_form GET api</a> of the opening for that field. The <code class="prettyprint">value</code> must adhere to the following constraints based on the field <code class="prettyprint">type</code> in the <a href="#get-application-form-fields-of-a-opening">application_form GET api</a></p>
+
+<table><thead>
+<tr>
+<th>Field Type</th>
+<th>Data</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>small_text</td>
+<td><strong>Plain text with max char length of 200</strong> eg: <code class="prettyprint">{&quot;key&quot;:&quot;candidate_first_name&quot;, &quot;value&quot;:&quot;John&quot; }</code></td>
+</tr>
+<tr>
+<td>large_text</td>
+<td><strong>Paragraph text</strong> eg: <code class="prettyprint">{&quot;key&quot;:&quot;cover_letter&quot;, &quot;value&quot;:&quot;About me ..&quot; }</code></td>
+</tr>
+<tr>
+<td>select_one</td>
+<td><strong>Applicants choose one option from a list, option selected should be given as a value</strong> eg: <code class="prettyprint">{&quot;key&quot;:&quot;age&quot;, &quot;value&quot;:&quot;18 - 25&quot; }</code></td>
+</tr>
+<tr>
+<td>select_multiple</td>
+<td><strong>Applicants can choose multiple options, options selected should be given as a list</strong> eg: <code class="prettyprint">{&quot;key&quot;:&quot;programming_expertise&quot;, &quot;value&quot;:[&quot;python&quot;, &quot;ruby&quot;, &quot;js&quot;]}</code></td>
+</tr>
+<tr>
+<td>url</td>
+<td><strong>Web-link / URL</strong> eg: <code class="prettyprint">{&quot;key&quot;:&quot;github_url&quot;, &quot;value&quot;:&quot;http://github.com/johndoe&quot;}</code></td>
+</tr>
+<tr>
+<td>email</td>
+<td><strong>Email Address</strong> eg: <code class="prettyprint">{&quot;key&quot;: &quot;email&quot;, &quot;value&quot;: &quot;john.doe@gmail.com&quot;}</code></td>
+</tr>
+<tr>
+<td>number</td>
+<td><strong>Number</strong> eg: <code class="prettyprint">{&quot;key&quot;: &quot;years_of_exp&quot;, &quot;value&quot;: &quot;5&quot;}</code></td>
+</tr>
+<tr>
+<td>file</td>
+<td><strong>File should be in base64 encoded format <a href="http://en.wikipedia.org/wiki/Base64">Know more here</a></strong> eg: <code class="prettyprint">{&quot;key&quot;: &quot;resume&quot;, &quot;value&quot;: {&quot;encoded_data&quot;: &quot;aGVsbG8gd29ybGQ=&quot;, &quot;file_name&quot;: &quot;resume.txt&quot; }}</code></td>
+</tr>
+</tbody></table>
+<h3 id='validation-errors-on-post'>Validation errors on Post</h3>
+<p>Validation errors are a list within the attribute <code class="prettyprint">errors</code> for each field key.</p>
+<pre class="highlight shell">curl -H <span class="s2">"Content-Type: application/json"</span> -X POST -d <span class="s1">'{
+  "fields": [
+    { "key" : "candidate_last_name", "value" : "Doe"},
+    { "key" : "candidate_email", "value" : "john.doegmail.com"},
+    { "key" : "candidate_phone", "value" : 123},
+    { "key" : "resume", "value": {
+      "encoded_data" : "wrong data",
+      "file_name" : "ressume.txt"
+      }
+    }
+  ],
+  "source" : "new website"
+  }'</span> https://api.recruiterbox.com/v1/openings/a42f3/apply -u <span class="o">{</span>api_key<span class="o">}</span>:
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"candidate_first_name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"This is a required field"</span><span class="p">]},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"candidate_email"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"The email is not valid"</span><span class="p">]},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"resume"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"The file is not in base64 encoded format"</span><span class="p">]}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></pre>
+
+<table><thead>
+<tr>
+<th>Error</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>This is a disabled field</td>
+<td>The field is hidden / disabled, remove this field from post data</td>
+</tr>
+<tr>
+<td>This is a required field</td>
+<td>This is a required field, candidate has to fill this field</td>
+</tr>
+<tr>
+<td>The value is not in small_text format (&gt;200 chars)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>The url is not valid</td>
+<td>-</td>
+</tr>
+<tr>
+<td>The email is not valid</td>
+<td>-</td>
+</tr>
+<tr>
+<td>The number is not valid</td>
+<td>-</td>
+</tr>
+<tr>
+<td>The date is not in valid timestamp format</td>
+<td>-</td>
+</tr>
+<tr>
+<td>The file is not in base64 encoded format</td>
+<td>The file should be encoded to base64 format. <a href="http://en.wikipedia.org/wiki/Base64">Know more here</a></td>
+</tr>
+<tr>
+<td>The file_name should be specified with proper extension</td>
+<td>A proper extension should be given for file name</td>
+</tr>
+<tr>
+<td>Not a valid file format. Allowed formats are ( doc, txt, html, htm, rtf, docx, odt, pdf )</td>
+<td>Resume should be of those allowed formats.</td>
+</tr>
+<tr>
+<td>Option should be a value for select_one e.g {&lsquo;key&rsquo;:&lsquo;somekey&rsquo;, &lsquo;value&rsquo;: &lsquo;1&rsquo;}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Options should be in a list for select_multiple e.g {&lsquo;key&rsquo;:&lsquo;somekey&rsquo;, &lsquo;value&rsquo;: [&lsquo;1&rsquo;, &lsquo;2&rsquo;]}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>No option selected</td>
+<td>No option was selected for a required select field</td>
+</tr>
+<tr>
+<td>{field} is not a valid option</td>
+<td>{field} was not one of the choices listed in select_one / select_multiple.</td>
 </tr>
 </tbody></table>
 
