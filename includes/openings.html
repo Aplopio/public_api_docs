@@ -400,7 +400,7 @@
     { "key" : "candidate_phone", "value" : 123},
     { "key" : "resume", "value": {
       "encoded_data" : "aGVsbG8gd29ybGQ=",
-      "file_name" : "ressume.txt"
+      "file_name" : "resume.txt"
       }
     }
   ],
@@ -409,7 +409,7 @@
 </pre>
 
 <blockquote>
-<p>The above command returns None.</p>
+<p>The above command returns empty response on success with a status code 201.</p>
 </blockquote>
 
 <p>This endpoint lets you apply to an opening. The end result is a candidate assigned to this opening.</p>
@@ -427,7 +427,7 @@
 <td>ID of the opening</td>
 </tr>
 </tbody></table>
-<h3 id='post-data-of-fields'>Post data of fields</h3>
+<h3 id='post-data'>Post data</h3>
 <p>Post data is a json with a required attribute <code class="prettyprint">fields</code> and an optional attribute <code class="prettyprint">source</code>. <code class="prettyprint">fields</code> is a list of candidate attributes, while <code class="prettyprint">source</code> can be (optionally) set to the source of this candidate.</p>
 
 <p>Each item in <code class="prettyprint">fields</code> has attributes <code class="prettyprint">key</code> and <code class="prettyprint">value</code>. The <code class="prettyprint">key</code> can be ascertained from the <a href="#get-application-form-fields-of-a-opening">application_form GET api</a> of the opening for that field. The <code class="prettyprint">value</code> must adhere to the following constraints based on the field <code class="prettyprint">type</code> in the <a href="#get-application-form-fields-of-a-opening">application_form GET api</a></p>
@@ -480,7 +480,7 @@
     { "key" : "candidate_phone", "value" : 123},
     { "key" : "resume", "value": {
       "encoded_data" : "wrong data",
-      "file_name" : "ressume.txt"
+      "file_name" : "resume.txt"
       }
     }
   ],
@@ -489,7 +489,7 @@
 </pre>
 
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>The above command returns JSON structured like this: (response for bad request with status code 400)</p>
 </blockquote>
 <pre class="highlight json"><span class="w">  </span><span class="p">{</span><span class="w">
     </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
