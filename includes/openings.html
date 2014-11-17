@@ -428,7 +428,7 @@
 </tr>
 </tbody></table>
 <h3 id='post-data'>Post data</h3>
-<p>Post data is a json with a required attribute <code class="prettyprint">fields</code> and an optional attribute <code class="prettyprint">source</code>. <code class="prettyprint">fields</code> is a list of candidate attributes, while <code class="prettyprint">source</code> can be (optionally) set to the source of this candidate.</p>
+<p>Post data is a <a href="http://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> with a required attribute <code class="prettyprint">fields</code> and an optional attribute <code class="prettyprint">source</code>. <code class="prettyprint">fields</code> is a list of candidate attributes, while <code class="prettyprint">source</code> can be (optionally) set to the source of this candidate.</p>
 
 <p>Each item in <code class="prettyprint">fields</code> has attributes <code class="prettyprint">key</code> and <code class="prettyprint">value</code>. The <code class="prettyprint">key</code> can be ascertained from the <a href="#get-application-form-fields-of-a-opening">application_form GET api</a> of the opening for that field. The <code class="prettyprint">value</code> must adhere to the following constraints based on the field <code class="prettyprint">type</code> in the <a href="#get-application-form-fields-of-a-opening">application_form GET api</a></p>
 
@@ -468,7 +468,7 @@
 </tr>
 <tr>
 <td>file</td>
-<td><strong>File should be in base64 encoded format <a href="http://en.wikipedia.org/wiki/Base64">Know more here</a></strong> eg: <code class="prettyprint">{&quot;key&quot;: &quot;resume&quot;, &quot;value&quot;: {&quot;encoded_data&quot;: &quot;aGVsbG8gd29ybGQ=&quot;, &quot;file_name&quot;: &quot;resume.txt&quot; }}</code></td>
+<td><strong>File should be in base64 encoded format <a href="http://en.wikipedia.org/wiki/Base64" target="_blank">Know more here</a></strong> eg: <code class="prettyprint">{&quot;key&quot;: &quot;resume&quot;, &quot;value&quot;: {&quot;encoded_data&quot;: &quot;aGVsbG8gd29ybGQ=&quot;, &quot;file_name&quot;: &quot;resume.txt&quot; }}</code></td>
 </tr>
 </tbody></table>
 <h3 id='validation-errors-on-post'>Validation errors on Post</h3>
@@ -536,7 +536,7 @@
 </tr>
 <tr>
 <td>The file is not in base64 encoded format</td>
-<td>The file should be encoded to base64 format. <a href="http://en.wikipedia.org/wiki/Base64">Know more here</a></td>
+<td>The file should be encoded to base64 format. <a href="http://en.wikipedia.org/wiki/Base64" target="_blank">Know more here</a></td>
 </tr>
 <tr>
 <td>The file_name should be specified with proper extension</td>
