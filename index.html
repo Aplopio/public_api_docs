@@ -48,7 +48,7 @@ curl uses the -u flag to pass basic auth credentials <span class="o">(</span>add
 
 </pre>
 
-<p>Authentication is done via the API key which you can find in <a href="https://app.recruiterbox.com/app/#settings/api-key/">Settings -&gt; Advanced Settings -&gt; API Key</a></p>
+<p>Authentication is done via the API key which you can find in <a href="https://app.recruiterbox.com/app/#settings/api-key/" target="_blank">Settings -&gt; Advanced Settings -&gt; API Key</a></p>
 
 <p>Requests are authenticated using <a href="http://en.wikipedia.org/wiki/Basic_access_authentication" target="_blank">HTTP Basic Auth</a>. Provide your API key as the basic auth username. You do not need to provide a password.</p>
 
@@ -213,6 +213,14 @@ You must replace <code class="prettyprint">{api_key}</code> with your API key.
 <td>modified_on</td>
 <td><strong>timestamp</strong></td>
 </tr>
+<tr>
+<td>allows_remote</td>
+<td><strong>boolean</strong></td>
+</tr>
+<tr>
+<td>position_type</td>
+<td><strong>choice(<code class="prettyprint">contract</code>, <code class="prettyprint">full_time</code>, <code class="prettyprint">part_time</code>) </strong></td>
+</tr>
 </tbody></table>
 <h2 id='list-of-all-openings'>List of all Openings</h2><pre class="highlight shell">curl https://api.recruiterbox.com/v1/openings <span class="se">\</span>
  -u <span class="o">{</span>api_key<span class="o">}</span>:
@@ -238,7 +246,9 @@ You must replace <code class="prettyprint">{api_key}</code> with your API key.
         </span><span class="s2">"application_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demoaccount-DMCC0203@app.recruiterbox.com"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"hosted_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demoaccount.recruiterbox.com/jobs/ad3e"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413437038</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"modified_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413445073</span><span class="w">
+        </span><span class="s2">"modified_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413445073</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"allows_remote"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"position_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contract"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -311,6 +321,14 @@ You must replace <code class="prettyprint">{api_key}</code> with your API key.
 <td>order_by</td>
 <td>Sort by created_on, modified_on attributes. Use &ldquo;-&rdquo; to sort in descending order</td>
 </tr>
+<tr>
+<td>allows_remote</td>
+<td>Filter by remote working allowed/ not allowed</td>
+</tr>
+<tr>
+<td>position_type</td>
+<td>Filter by one of the position_type <code class="prettyprint">contract, full_time, part_time</code></td>
+</tr>
 </tbody></table>
 <h2 id='get-a-specific-opening'>Get a specific Opening</h2><pre class="highlight shell">curl https://api.recruiterbox.com/v1/openings/a42f3 <span class="se">\</span>
   -u <span class="o">{</span>api_key<span class="o">}</span>:
@@ -330,7 +348,9 @@ You must replace <code class="prettyprint">{api_key}</code> with your API key.
   </span><span class="s2">"application_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demoaccount-DMCC0203@app.recruiterbox.com"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"hosted_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demoaccount.recruiterbox.com/jobs/ad3e"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413437038</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"modified_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413445073</span><span class="w">
+  </span><span class="s2">"modified_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413445073</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"allows_remote"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"position_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"full_time"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
