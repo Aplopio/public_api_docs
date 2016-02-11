@@ -63,8 +63,14 @@ html, body {
     font-size: 22px;
     color: #005889;
 
-    &>img {
+    &> a > img {
         vertical-align: middle;
+    }
+
+    &>a {
+        font-size: 22px;
+        text-decoration: none;
+        color: #005889;
     }
 }
 
