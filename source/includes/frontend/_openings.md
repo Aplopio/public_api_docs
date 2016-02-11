@@ -103,7 +103,7 @@ $.ajax({
   "tags": ["Dev","UX"],
   "hosted_url": "https://demoaccount.recruiterbox.com/jobs/ad3e",
   "allows_remote": true,
-  "position_type": "full_time"
+  "position_type": "full_time",
   "team": "FrontEnd Engineer"
 }
 ```
@@ -257,7 +257,7 @@ var payload = {
     { "key" : "candidate_first_name", "value" : "John"},
     { "key" : "candidate_last_name", "value" : "Doe"},
     { "key" : "candidate_email", "value" : "john.doe@gmail.com"},
-    { "key" : "candidate_phone", "value" : 123},
+    { "key" : "candidate_phone", "value" : "123"},
     { "key" : "resume", "value": {
       "encoded_data" : "aGVsbG8gd29ybGQ=",
       "file_name" : "resume.txt"
@@ -325,7 +325,7 @@ Validation errors are a list within the attribute ```errors``` for each field ke
 var payload = {
   "fields": [
     { "key" : "candidate_last_name", "value" : "Doe"},
-    { "key" : "candidate_phone", "value" : 123},
+    { "key" : "candidate_phone", "value" : "123"},
     { "key" : "resume", "value": {
       "encoded_data" : "wrong data posted",
       "file_name" : "resume.txt"

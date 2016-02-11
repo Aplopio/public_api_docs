@@ -52,7 +52,7 @@ curl https://api.recruiterbox.com/v1/openings \
         "created_on": 1413437038,
         "modified_on": 1413445073,
         "allows_remote": true,
-        "position_type": "contract"
+        "position_type": "contract",
         "team": "FrontEnd Engineers"
       }
     ],
@@ -114,7 +114,7 @@ curl https://api.recruiterbox.com/v1/openings/a42f3 \
   "created_on": 1413437038,
   "modified_on": 1413445073,
   "allows_remote": true,
-  "position_type": "full_time"
+  "position_type": "full_time",
   "team": "FrontEnd Engineer"
 }
 ```
@@ -259,7 +259,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
     { "key" : "candidate_first_name", "value" : "John"},
     { "key" : "candidate_last_name", "value" : "Doe"},
     { "key" : "candidate_email", "value" : "john.doe@gmail.com"},
-    { "key" : "candidate_phone", "value" : 123},
+    { "key" : "candidate_phone", "value" : "123"},
     { "key" : "resume", "value": {
       "encoded_data" : "aGVsbG8gd29ybGQ=",
       "file_name" : "resume.txt"
@@ -312,7 +312,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
   "fields": [
     { "key" : "candidate_last_name", "value" : "Doe"},
     { "key" : "candidate_email", "value" : "john.doegmail.com"},
-    { "key" : "candidate_phone", "value" : 123},
+    { "key" : "candidate_phone", "value" : "123"},
     { "key" : "resume", "value": {
       "encoded_data" : "wrong data",
       "file_name" : "resume.txt"
