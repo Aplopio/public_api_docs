@@ -13,12 +13,7 @@ location.city | <strong>string</strong>
 location.state | <strong>string</strong>
 location.country | <strong>string</strong>
 tags | <strong>list</strong>
-is_private | <strong>boolean</strong>
-is_archived | <strong>boolean</strong>
-application_email | <strong>string</strong>
 hosted_url | <strong>string</strong>
-created_on | <strong>timestamp</strong>
-modified_on | <strong>timestamp</strong>
 allows_remote | <strong>boolean</strong>
 position_type | <strong>choice(`contract`, `full_time`, `part_time`) </strong>
 team | <strong>string</strong>
@@ -26,11 +21,16 @@ team | <strong>string</strong>
 ## List of all Openings
 
 
-```shell
-curl https://api.recruiterbox.com/v1/openings \
- -u {api_key}:
+```javascript
+$.ajax({
+  url: 'https://jsapi.recruiterbox.com/v1/openings',
+  contentType: 'application/json',
+  success: function(response) {
+      console.log(response);
+    }
+  });
 ```
-> The above command returns JSON structured like this:
+> The above snippet logs the JSON response like the example below
 
 ```json
 {
@@ -45,12 +45,7 @@ curl https://api.recruiterbox.com/v1/openings \
           "country": "USA"
         },
         "tags": ["Dev","UX"],
-        "is_private": false,
-        "is_archived": false,
-        "application_email": "demoaccount-DMCC0203@app.recruiterbox.com",
         "hosted_url": "https://demoaccount.recruiterbox.com/jobs/ad3e",
-        "created_on": 1413437038,
-        "modified_on": 1413445073,
         "allows_remote": true,
         "position_type": "contract",
         "team": "FrontEnd Engineers"
@@ -68,24 +63,19 @@ This endpoint retrieves all openings.
 
 ### HTTP Request
 
-`GET https://api.recruiterbox.com/v1/openings/`
+`GET https://jsapi.recruiterbox.com/v1/openings/`
 
 ### Query Parameters
 
 Parameter | Description
 --------- | -------------
+client_name | The client name eg: recruiterbox (mandatory)
 tags | Filter by tags
 city | Filter by city
 state | Filter by state
 country | Filter by country
 title | Filter by title
 description | Filter by description
-is_archived | Filter by archived openings
-is_private | Filter by private / public openings
-created_on__gt |  Filter by created date greater than a given timestamp
-modified_on__gt | Filter by modified date greater than a given timestamp
-created_on__lt |  Filter by created date lesser than a given timestamp
-modified_on__lt | Filter by modified date lesser than a given timestamp
 order_by | Sort by created_on, modified_on attributes. Use "-" to sort in descending order
 allows_remote | Filter by remote working allowed/ not allowed
 position_type | Filter by one of the position_type `contract, full_time, part_time`
@@ -93,12 +83,16 @@ team | Filter by team
 
 ## Get a specific Opening
 
-
-```shell
-curl https://api.recruiterbox.com/v1/openings/a42f3 \
-  -u {api_key}:
+```javascript
+$.ajax({
+  url: 'https://jsapi.recruiterbox.com/v1/openings/a42f3',
+  contentType: 'application/json',
+  success: function(response) {
+      console.log(response);
+    }
+  });
 ```
-> The above command returns JSON structured like this:
+> The above snippet logs the JSON response like the example below
 
 ```json
 {
@@ -107,12 +101,7 @@ curl https://api.recruiterbox.com/v1/openings/a42f3 \
   "description": "UX - Engineer",
   "location": { "city": "San Jose", "state": "CA", "country": "USA"},
   "tags": ["Dev","UX"],
-  "is_private": false,
-  "is_archived": false,
-  "application_email": "demoaccount-DMCC0203@app.recruiterbox.com",
   "hosted_url": "https://demoaccount.recruiterbox.com/jobs/ad3e",
-  "created_on": 1413437038,
-  "modified_on": 1413445073,
   "allows_remote": true,
   "position_type": "full_time",
   "team": "FrontEnd Engineer"
@@ -124,7 +113,13 @@ This endpoint retrieves a specific opening.
 
 ### HTTP Request
 
-`GET https://api.recruiterbox.com/v1/openings/{id}`
+`GET https://jsapi.recruiterbox.com/v1/openings/{id}/`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -------------
+client_name | The client name eg: recruiterbox (mandatory)
 
 ### URL Parameters
 
@@ -135,18 +130,21 @@ id | ID of the opening to retrieve
 
 ## Get application form fields of a Opening
 
-
-```shell
-curl https://api.recruiterbox.com/v1/openings/a42f3/application_form \
-  -u {api_key}:
+```javascript
+$.ajax({
+  url: 'https://jsapi.recruiterbox.com/v1/openings/a42f3/application_form',
+  contentType: 'application/json',
+  success: function(response) {
+      console.log(response);
+    }
+  });
 ```
-> The above command returns JSON structured like this:
+> The above snippet logs the JSON response like the example below
 
 ```json
 {
     "objects": [
         {
-            "is_disabled": false,
             "label": "First Name",
             "choices": [],
             "key": "candidate_first_name",
@@ -155,7 +153,6 @@ curl https://api.recruiterbox.com/v1/openings/a42f3/application_form \
             "type": "small_text"
         },
         {
-            "is_disabled": false,
             "label": "Last Name",
             "choices": [],
             "key": "candidate_last_name",
@@ -164,7 +161,6 @@ curl https://api.recruiterbox.com/v1/openings/a42f3/application_form \
             "type": "small_text"
         },
         {
-            "is_disabled": false,
             "label": "Email",
             "choices": [],
             "key": "candidate_email",
@@ -173,7 +169,6 @@ curl https://api.recruiterbox.com/v1/openings/a42f3/application_form \
             "type": "email"
         },
         {
-            "is_disabled": true,
             "label": "Phone",
             "choices": [],
             "key": "candidate_phone",
@@ -182,7 +177,6 @@ curl https://api.recruiterbox.com/v1/openings/a42f3/application_form \
             "type": "small_text"
         },
         {
-            "is_disabled": false,
             "label": "Resume",
             "choices": [],
             "key": "resume",
@@ -191,7 +185,6 @@ curl https://api.recruiterbox.com/v1/openings/a42f3/application_form \
             "type": "file"
         },
         {
-            "is_disabled": false,
             "label": "Age",
             "choices": [
                 "18 - 25",
@@ -217,7 +210,7 @@ This endpoint retrieves all application form fields of a specific opening.
 
 ### HTTP Request
 
-`GET https://api.recruiterbox.com/v1/openings/{id}/application_form`
+`GET https://jsapi.recruiterbox.com/v1/openings/{id}/application_form`
 
 ### Attributes
 
@@ -225,10 +218,15 @@ Attribute   | Description
 ----------- | -----------
 key          | <strong>string</strong> A unique key for the field.
 type | <strong>string</strong> Type of the field, can be either of `small_text`, `large_text`, `select_one`, `select_multiple`, `url`, `email`, `number`, `date` & `file`.
-is_disabled       | <strong>boolean</strong> Is a disabled field ?
 is_required       | <strong>boolean</strong> Is a required field ?
 label | <strong>string</strong> Field label
 choices | <strong>list</strong> Choices for field, if either of type `select_one` or `select_multiple`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -------------
+client_name | The client name eg: recruiterbox (mandatory)
 
 ### URL Parameters
 
@@ -253,8 +251,8 @@ file | File Upload
 ## Apply for a Opening
 
 
-```shell
-curl -H "Content-Type: application/json" -X POST -d '{
+```javascript
+var payload = {
   "fields": [
     { "key" : "candidate_first_name", "value" : "John"},
     { "key" : "candidate_last_name", "value" : "Doe"},
@@ -265,18 +263,34 @@ curl -H "Content-Type: application/json" -X POST -d '{
       "file_name" : "resume.txt"
       }
     }
-  ],
-  "source" : "new website"
-  }' https://api.recruiterbox.com/v1/openings/a42f3/apply -u {api_key}:
+  ]
+};
+
+
+$.ajax({
+  url: 'https://jsapi.recruiterbox.com/v1/openings/a42f3/apply',
+  data: JSON.stringify(payload),
+  dataType: 'json',
+  type: 'POST',
+  success: function(response) {
+    console.log("success");
+  }
+});
 ```
-> The above command returns empty response on success with a status code 201.
+> The above snippet returns empty response on success with a status code 201 and logs success in the console.
 
 This endpoint lets you apply to an opening. The end result is a candidate assigned to this opening.
 
 
 ### HTTP Request
 
-`POST https://api.recruiterbox.com/v1/openings/{id}/apply`
+`POST https://jsapi.recruiterbox.com/v1/openings/{id}/apply`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -------------
+client_name | The client name eg: recruiterbox (mandatory)
 
 ### URL Parameters
 
@@ -307,20 +321,32 @@ file       | <strong>File should be in base64 encoded format <a href="http://en.
 Validation errors are a list within the attribute ```errors``` for each field key.
 
 
-```shell
-curl -H "Content-Type: application/json" -X POST -d '{
+```javascript
+var payload = {
   "fields": [
     { "key" : "candidate_last_name", "value" : "Doe"},
-    { "key" : "candidate_email", "value" : "john.doegmail.com"},
     { "key" : "candidate_phone", "value" : "123"},
     { "key" : "resume", "value": {
-      "encoded_data" : "wrong data",
+      "encoded_data" : "wrong data posted",
       "file_name" : "resume.txt"
       }
     }
-  ],
-  "source" : "new website"
-  }' https://api.recruiterbox.com/v1/openings/a42f3/apply -u {api_key}:
+  ]
+};
+
+
+$.ajax({
+  url: 'https://jsapi.recruiterbox.com/v1/openings/a42f3/apply',
+  data: JSON.stringify(payload),
+  dataType: 'json',
+  type: 'POST',
+  success: function(response) {
+    console.log("success");
+  },
+  error: function(xhr, status, errors) {
+    console.log(JSON.parse(xhr.responseText));
+  }
+});
 ```
 
 > The above command returns JSON structured like this: (response for bad request with status code 400)
