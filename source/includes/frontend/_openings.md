@@ -63,12 +63,13 @@ This endpoint retrieves all openings.
 
 ### HTTP Request
 
-`GET https://jsapi.recruiterbox.com/v1/openings/?client_name={your_client_name}`
+`GET https://jsapi.recruiterbox.com/v1/openings/`
 
 ### Query Parameters
 
 Parameter | Description
 --------- | -------------
+client_name | The client name eg: recruiterbox (mandatory)
 tags | Filter by tags
 city | Filter by city
 state | Filter by state
@@ -112,7 +113,13 @@ This endpoint retrieves a specific opening.
 
 ### HTTP Request
 
-`GET https://jsapi.recruiterbox.com/v1/openings/{id}/?client_name={your_client_name}`
+`GET https://jsapi.recruiterbox.com/v1/openings/{id}/`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -------------
+client_name | The client name eg: recruiterbox (mandatory)
 
 ### URL Parameters
 
@@ -203,7 +210,7 @@ This endpoint retrieves all application form fields of a specific opening.
 
 ### HTTP Request
 
-`GET https://jsapi.recruiterbox.com/v1/openings/{id}/application_form??client_name={your_client_name}`
+`GET https://jsapi.recruiterbox.com/v1/openings/{id}/application_form`
 
 ### Attributes
 
@@ -214,6 +221,12 @@ type | <strong>string</strong> Type of the field, can be either of `small_text`,
 is_required       | <strong>boolean</strong> Is a required field ?
 label | <strong>string</strong> Field label
 choices | <strong>list</strong> Choices for field, if either of type `select_one` or `select_multiple`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -------------
+client_name | The client name eg: recruiterbox (mandatory)
 
 ### URL Parameters
 
@@ -271,7 +284,13 @@ This endpoint lets you apply to an opening. The end result is a candidate assign
 
 ### HTTP Request
 
-`POST https://jsapi.recruiterbox.com/v1/openings/{id}/apply??client_name={your_client_name}`
+`POST https://jsapi.recruiterbox.com/v1/openings/{id}/apply`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -------------
+client_name | The client name eg: recruiterbox (mandatory)
 
 ### URL Parameters
 
