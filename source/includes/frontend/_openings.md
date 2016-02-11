@@ -63,7 +63,7 @@ This endpoint retrieves all openings.
 
 ### HTTP Request
 
-`GET https://jsapi.recruiterbox.com/v1/openings/`
+`GET https://jsapi.recruiterbox.com/v1/openings/?client_name={your_client_name}`
 
 ### Query Parameters
 
@@ -112,7 +112,7 @@ This endpoint retrieves a specific opening.
 
 ### HTTP Request
 
-`GET https://jsapi.recruiterbox.com/v1/openings/{id}`
+`GET https://jsapi.recruiterbox.com/v1/openings/{id}/?client_name={your_client_name}`
 
 ### URL Parameters
 
@@ -203,7 +203,7 @@ This endpoint retrieves all application form fields of a specific opening.
 
 ### HTTP Request
 
-`GET https://jsapi.recruiterbox.com/v1/openings/{id}/application_form`
+`GET https://jsapi.recruiterbox.com/v1/openings/{id}/application_form??client_name={your_client_name}`
 
 ### Attributes
 
@@ -271,7 +271,7 @@ This endpoint lets you apply to an opening. The end result is a candidate assign
 
 ### HTTP Request
 
-`POST https://jsapi.recruiterbox.com/v1/openings/{id}/apply`
+`POST https://jsapi.recruiterbox.com/v1/openings/{id}/apply??client_name={your_client_name}`
 
 ### URL Parameters
 
