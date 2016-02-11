@@ -1,0 +1,47 @@
+<h1 id="pagination">Pagination</h1>
+
+<p>The &ldquo;list&rdquo; request for all top level API resources are paginated.</p>
+
+<h3 id="query-parameters">Query parameters</h3>
+
+<table><thead>
+<tr>
+<th>&nbsp;</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td><strong>optional</strong> A limit on the number of objects returned. (default : 20, max: 250)</td>
+</tr>
+<tr>
+<td>offset</td>
+<td><strong>optional</strong> A cursor for use in pagination.</td>
+</tr>
+</tbody></table>
+
+<h3 id="list-response-format">List response format</h3>
+
+<table><thead>
+<tr>
+<th>&nbsp;</th>
+<th>&nbsp;</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>objects</td>
+<td><strong>list</strong> Requested resource data</td>
+</tr>
+<tr>
+<td>meta.total</td>
+<td><strong>number</strong> Total count</td>
+</tr>
+<tr>
+<td>meta.limit</td>
+<td><strong>number</strong> Limit</td>
+</tr>
+<tr>
+<td>meta.offset</td>
+<td><strong>number</strong> Offset</td>
+</tr>
+</tbody></table>
