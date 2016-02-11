@@ -10,7 +10,7 @@ language_tabs:
   - shell
 
 toc_footers:
-  - <a href='#'>Generate API Key</a>
+  - <a target="_blank" href='https://app.recruiterbox.com/app/#settings/api-key/'>Generate API Key</a>
 
 
 search: true
