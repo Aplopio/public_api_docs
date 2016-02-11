@@ -13,13 +13,8 @@ toc_footers:
   - <a href='#'>Generate API Key</a>
 
 
-search: false
+search: true
 ---
-
-# Introduction
-
-Welcome to the Recruiterbox API
-
 
 # Authentication
 

@@ -34,10 +34,13 @@ under the License.
       </span>
     </a>
     <div class="tocify-wrapper">
-      <%= image_tag "logo.png" %>
+      <div class="text-center logo">
+          <%= image_tag "logo.png" %> recruiterbox
+      </div>
     </div>
     <div class="page-wrapper">
-      <div class="content index">
+      <div class="dark-box"></div>
+      <div class="content">
         <%= yield %>
         <% current_page.data.includes && current_page.data.includes.each do |include| %>
           <%= partial "includes/#{include}" %>
