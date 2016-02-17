@@ -264,7 +264,7 @@
 
 <h2 id="list-of-all-openings">List of all Openings</h2>
 <pre class="highlight javascript"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://jsapi.recruiterbox.com/v1/openings'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://jsapi.recruiterbox.com/v1/openings?client_name=demoaccount'</span><span class="p">,</span>
   <span class="na">contentType</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
@@ -363,7 +363,7 @@
 
 <h2 id="get-a-specific-opening">Get a specific Opening</h2>
 <pre class="highlight javascript"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://jsapi.recruiterbox.com/v1/openings/a42f3'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://jsapi.recruiterbox.com/v1/openings/a42f3?client_name=demoaccount'</span><span class="p">,</span>
   <span class="na">contentType</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
@@ -423,7 +423,7 @@
 
 <h2 id="get-application-form-fields-of-a-opening">Get application form fields of a Opening</h2>
 <pre class="highlight javascript"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://jsapi.recruiterbox.com/v1/openings/a42f3/application_form'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://jsapi.recruiterbox.com/v1/openings/a42f3/application_form?client_name=demoaccount'</span><span class="p">,</span>
   <span class="na">contentType</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
@@ -624,7 +624,7 @@
 
 
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://jsapi.recruiterbox.com/v1/openings/a42f3/apply'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://jsapi.recruiterbox.com/v1/openings/a42f3/apply?client_name=demoaccount'</span><span class="p">,</span>
   <span class="na">data</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">payload</span><span class="p">),</span>
   <span class="na">dataType</span><span class="p">:</span> <span class="s1">'json'</span><span class="p">,</span>
   <span class="na">type</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
@@ -735,7 +735,7 @@
 
 
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://jsapi.recruiterbox.com/v1/openings/a42f3/apply'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://jsapi.recruiterbox.com/v1/openings/a42f3/apply?client_name=demoaccount'</span><span class="p">,</span>
   <span class="na">data</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">payload</span><span class="p">),</span>
   <span class="na">dataType</span><span class="p">:</span> <span class="s1">'json'</span><span class="p">,</span>
   <span class="na">type</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
