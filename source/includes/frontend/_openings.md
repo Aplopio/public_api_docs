@@ -23,7 +23,7 @@ team | <strong>string</strong>
 
 ```javascript
 $.ajax({
-  url: 'https://jsapi.recruiterbox.com/v1/openings',
+  url: 'https://jsapi.recruiterbox.com/v1/openings?client_name=demoaccount',
   contentType: 'application/json',
   success: function(response) {
       console.log(response);
@@ -85,7 +85,7 @@ team | Filter by team
 
 ```javascript
 $.ajax({
-  url: 'https://jsapi.recruiterbox.com/v1/openings/a42f3',
+  url: 'https://jsapi.recruiterbox.com/v1/openings/a42f3?client_name=demoaccount',
   contentType: 'application/json',
   success: function(response) {
       console.log(response);
@@ -132,7 +132,7 @@ id | ID of the opening to retrieve
 
 ```javascript
 $.ajax({
-  url: 'https://jsapi.recruiterbox.com/v1/openings/a42f3/application_form',
+  url: 'https://jsapi.recruiterbox.com/v1/openings/a42f3/application_form?client_name=demoaccount',
   contentType: 'application/json',
   success: function(response) {
       console.log(response);
@@ -268,7 +268,7 @@ var payload = {
 
 
 $.ajax({
-  url: 'https://jsapi.recruiterbox.com/v1/openings/a42f3/apply',
+  url: 'https://jsapi.recruiterbox.com/v1/openings/a42f3/apply?client_name=demoaccount',
   data: JSON.stringify(payload),
   dataType: 'json',
   type: 'POST',
@@ -336,7 +336,7 @@ var payload = {
 
 
 $.ajax({
-  url: 'https://jsapi.recruiterbox.com/v1/openings/a42f3/apply',
+  url: 'https://jsapi.recruiterbox.com/v1/openings/a42f3/apply?client_name=demoaccount',
   data: JSON.stringify(payload),
   dataType: 'json',
   type: 'POST',
