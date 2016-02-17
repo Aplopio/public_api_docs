@@ -1,6 +1,6 @@
 # Openings
 
-The Openings API lets you work on opening data for a client. Some examples on using the API can be found at https://github.com/Aplopio/jsapi-client  
+The Openings API lets you work on opening data for a client. 
 
 ### Attributes
 
