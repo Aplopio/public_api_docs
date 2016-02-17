@@ -1,6 +1,6 @@
 # Openings
 
-The Openings API lets you retrieve data related to openings for a client. Some javascript examples on using the API can be found at https://github.com/Aplopio/jsapi-client
+The Openings API lets you retrieve data related to openings for a client. Some javascript examples on using the API can be found [here](https://github.com/Aplopio/jsapi-client)
 
 ### Attributes
 
