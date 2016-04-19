@@ -241,9 +241,7 @@
 </tr>
 </tbody></table>
 
-<blockquote>
-<p>Note: In order to get the ‘id’ call the list of all openings (above) - which will return the ‘id’ parameter in the response.</p>
-</blockquote>
+<h1 id="note-in-order-to-get-the-id-call-the-list-of-all-openings-above-which-will-return-the-id-parameter-in-the-response">Note: In order to get the ‘id’ call the list of all openings (above) - which will return the ‘id’ parameter in the response.</h1>
 
 <h2 id="get-application-form-fields-of-a-opening">Get application form fields of a Opening</h2>
 <pre class="highlight shell"><code>curl https://api.recruiterbox.com/v1/openings/a42f3/application_form <span class="se">\</span>
