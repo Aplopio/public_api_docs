@@ -271,6 +271,7 @@ $.ajax({
   url: 'https://jsapi.recruiterbox.com/v1/openings/a42f3/apply?client_name=demoaccount',
   data: JSON.stringify(payload),
   dataType: 'json',
+  contentType: 'application/json',
   type: 'POST',
   success: function(response) {
     console.log("success");
