@@ -132,7 +132,7 @@ Parameter | Description
 --------- | -----------
 id | ID of the opening to retrieve
 
-#### Note: In order to get the ‘id’ call the list of all openings (above) - which will return the ‘id’ parameter in the response.
+### Note: In order to get the ‘id’ call the list of all openings (above) - which will return the ‘id’ parameter in the response.
 
 ## Get application form fields of a Opening
 
