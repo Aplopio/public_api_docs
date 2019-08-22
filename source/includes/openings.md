@@ -23,6 +23,7 @@ allows_remote | <strong>boolean</strong>
 position_type | <strong>choice(`contract`, `full_time`, `part_time`) </strong>
 team | <strong>string</strong>
 additional_fields | <strong>json object</strong>
+close_date | <strong>integer</strong>
 
 ## List of all Openings
 
@@ -52,6 +53,7 @@ curl https://api.recruiterbox.com/v1/openings \
         "hosted_url": "https://demoaccount.recruiterbox.com/jobs/ad3e",
         "created_on": 1413437038,
         "modified_on": 1413445073,
+        "close_date": 1513445073,
         "allows_remote": true,
         "position_type": "contract",
         "team": "FrontEnd Engineers",
@@ -117,6 +119,7 @@ curl https://api.recruiterbox.com/v1/openings/a42f3 \
   "hosted_url": "https://demoaccount.recruiterbox.com/jobs/ad3e",
   "created_on": 1413437038,
   "modified_on": 1413445073,
+  "close_date": 1513445073,
   "allows_remote": true,
   "position_type": "full_time",
   "team": "FrontEnd Engineer",
