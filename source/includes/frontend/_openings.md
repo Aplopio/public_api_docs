@@ -17,6 +17,7 @@ hosted_url | <strong>string</strong>
 allows_remote | <strong>boolean</strong>
 position_type | <strong>choice(`contract`, `full_time`, `part_time`) </strong>
 team | <strong>string</strong>
+close_date | <strong>integer</strong>
 
 ## List of all Openings
 
@@ -48,7 +49,8 @@ $.ajax({
         "hosted_url": "https://demoaccount.recruiterbox.com/jobs/ad3e",
         "allows_remote": true,
         "position_type": "contract",
-        "team": "FrontEnd Engineers"
+        "team": "FrontEnd Engineers",
+        "close_date": 1513445073
       }
     ],
     "meta": {
@@ -104,7 +106,8 @@ $.ajax({
   "hosted_url": "https://demoaccount.recruiterbox.com/jobs/ad3e",
   "allows_remote": true,
   "position_type": "full_time",
-  "team": "FrontEnd Engineer"
+  "team": "FrontEnd Engineer",
+  "close_date": 1513445073
 }
 ```
 
