@@ -78,6 +78,10 @@
 <td>additional_fields</td>
 <td><strong>json object</strong></td>
 </tr>
+<tr>
+<td>close_date</td>
+<td><strong>integer</strong></td>
+</tr>
 </tbody></table>
 
 <h2 id="list-of-all-openings">List of all Openings</h2>
@@ -106,6 +110,7 @@
         </span><span class="nt">"hosted_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demoaccount.recruiterbox.com/jobs/ad3e"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413437038</span><span class="p">,</span><span class="w">
         </span><span class="nt">"modified_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413445073</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"close_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">1513445073</span><span class="p">,</span><span class="w">
         </span><span class="nt">"allows_remote"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="nt">"position_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contract"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"team"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FrontEnd Engineers"</span><span class="p">,</span><span class="w">
@@ -222,6 +227,7 @@
   </span><span class="nt">"hosted_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://demoaccount.recruiterbox.com/jobs/ad3e"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"created_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413437038</span><span class="p">,</span><span class="w">
   </span><span class="nt">"modified_on"</span><span class="p">:</span><span class="w"> </span><span class="mi">1413445073</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"close_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">1513445073</span><span class="p">,</span><span class="w">
   </span><span class="nt">"allows_remote"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nt">"position_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"full_time"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"team"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FrontEnd Engineer"</span><span class="p">,</span><span class="w">
