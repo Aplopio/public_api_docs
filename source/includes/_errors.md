@@ -1,6 +1,6 @@
 # Errors
 
-Recruiterbox API uses standard HTTP response codes to indicate success or failure of an API request.
+Trakstar Hire API uses standard HTTP response codes to indicate success or failure of an API request.
 
 HTTP Code | Meaning
 ---------- | -------
