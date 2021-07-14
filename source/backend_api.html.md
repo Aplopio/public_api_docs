@@ -1,5 +1,5 @@
 ---
-title: Recruiterbox | API Reference
+title: Trakstar Hire | API Reference
 
 includes:
   - pagination

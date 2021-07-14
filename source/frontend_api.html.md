@@ -1,5 +1,5 @@
 ---
-title: Frontend API - Recruiterbox | API Reference
+title: Frontend API - Trakstar Hire | API Reference
 
 includes:
   - frontend/openings.md
