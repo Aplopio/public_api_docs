@@ -29,7 +29,7 @@ close_date | <strong>integer</strong>
 
 
 ```shell
-curl https://api.recruiterbox.com/v1/openings \
+curl https://api.recruiterbox.com/api/v2/openings \
  -u {api_key}:
 ```
 > The above command returns JSON structured like this:
@@ -74,7 +74,7 @@ This endpoint retrieves all openings.
 
 ### HTTP Request
 
-`GET https://api.recruiterbox.com/v1/openings/`
+`GET https://api.recruiterbox.com/api/v2/openings/`
 
 ### Query Parameters
 
@@ -101,7 +101,7 @@ team | Filter by team
 
 
 ```shell
-curl https://api.recruiterbox.com/v1/openings/a42f3 \
+curl https://api.recruiterbox.com/api/v2/openings/a42f3 \
   -u {api_key}:
 ```
 > The above command returns JSON structured like this:
@@ -134,7 +134,7 @@ This endpoint retrieves a specific opening.
 
 ### HTTP Request
 
-`GET https://api.recruiterbox.com/v1/openings/{id}`
+`GET https://api.recruiterbox.com/api/v2/openings/{id}`
 
 ### URL Parameters
 
@@ -148,7 +148,7 @@ id | ID of the opening to retrieve
 
 
 ```shell
-curl https://api.recruiterbox.com/v1/openings/a42f3/application_form \
+curl https://api.recruiterbox.com/api/v2/openings/a42f3/application_form \
   -u {api_key}:
 ```
 > The above command returns JSON structured like this:
@@ -228,7 +228,7 @@ This endpoint retrieves all application form fields of a specific opening.
 
 ### HTTP Request
 
-`GET https://api.recruiterbox.com/v1/openings/{id}/application_form`
+`GET https://api.recruiterbox.com/api/v2/openings/{id}/application_form`
 
 ### Attributes
 
@@ -278,7 +278,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
     }
   ],
   "source" : "new website"
-  }' https://api.recruiterbox.com/v1/openings/a42f3/apply -u {api_key}:
+  }' https://api.recruiterbox.com/api/v2/openings/a42f3/apply -u {api_key}:
 ```
 > The above command returns empty response on success with a status code 201.
 
@@ -287,7 +287,7 @@ This endpoint lets you apply to an opening. The end result is a candidate assign
 
 ### HTTP Request
 
-`POST https://api.recruiterbox.com/v1/openings/{id}/apply`
+`POST https://api.recruiterbox.com/api/v2/openings/{id}/apply`
 
 ### URL Parameters
 
@@ -331,7 +331,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
     }
   ],
   "source" : "new website"
-  }' https://api.recruiterbox.com/v1/openings/a42f3/apply -u {api_key}:
+  }' https://api.recruiterbox.com/api/v2/openings/a42f3/apply -u {api_key}:
 ```
 
 > The above command returns JSON structured like this: (response for bad request with status code 400)
